@@ -1,3 +1,87 @@
 * {
   font-family: "outfit";
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header h2 {
+  margin: 0;
+  font-size: 40px;
+}
+
+nav {
+  height: 100%;
+  width: 100%;
+}
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav ul li {
+  display: flex;
+}
+nav ul li button {
+  border: none;
+  background-color: transparent;
+  font-size: 35px;
+  font-weight: 100;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 80px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+footer .contactWrapup {
+  display: flex;
+}
+footer .contactWrapup__contact {
+  display: flex;
+  align-items: center;
+}
+footer .contactWrapup__contact img {
+  width: 35px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 5px;
+}
+footer .contactWrapup__contact p {
+  font-weight: 100;
+  font-size: 30px;
+  margin: 0;
+}
+footer .contactWrapup__contact:nth-child(1) {
+  margin-right: 20px;
+}
+footer .sociauxWrapup {
+  display: flex;
+}
+footer .sociauxWrapup img {
+  width: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+footer .sociauxWrapup img:nth-child(1) {
+  margin-right: 10px;
 }/*# sourceMappingURL=style.css.map */
