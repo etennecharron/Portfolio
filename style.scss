@@ -2,6 +2,7 @@
     font-family: "outfit";
     box-sizing: border-box;
 }
+/**********DÉBUT STYLE DE BASE*********/
 body{
     width: 100vw;
     height:100vh;
@@ -28,6 +29,9 @@ nav{
         padding: 0;
         li{
             display: flex;
+            img{
+                width: 60px;
+            }
             button{
                 border: none;
                 background-color:transparent;
@@ -43,16 +47,16 @@ main{
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
-    font-size: 80px;
+    h1{
+        font-size: 160px;
+    }
 }
-
 footer{
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 .contactWrapup{
     display: flex;
-
     &__contact{
         display: flex;
         align-items: center;
@@ -63,7 +67,7 @@ footer{
         }
         p{
             font-weight: 100;
-            font-size:30px;
+            font-size:27px;
             margin: 0;
         }
     }
@@ -82,4 +86,101 @@ footer{
     }
 }
 }
+/**********FIN STYLE DE BASE*********/
 
+
+
+/************DÉBUT STYLE < 900***********************/
+
+@media (max-width:900px){
+    main{
+        h1{
+            font-size: 110px;
+        }
+    }
+    
+    footer{
+        .contactWrapup{
+            &__contact{
+                img{
+                    width: 30px;
+                }
+                p{
+                font-size:22px; 
+                }
+            }
+        }
+        .sociauxWrapup{
+            img{
+                width: 40px;
+            }
+        }
+
+    }
+}
+
+/************FIN STYLE < 900***********************/
+
+
+
+/**************DÉBUT STYLE < 738******************************/
+
+@media (max-width:738px){
+
+    header{
+        h2{
+            font-size: 30px;
+            width: 150px;
+        }
+    }
+    nav{
+        ul{
+            li{
+                img{
+                    width: 40px;
+                }
+                button{
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+    main{
+        h1{
+            font-size: 90px;
+        }
+    }
+    footer{
+        .contactWrapup{
+            flex-direction: column-reverse;
+        }
+    }
+    }
+
+/**************FIN STYLE < 738******************************/
+
+
+
+
+
+/***************DÉBUT STYLE < 556**********************/
+
+@media(max-width:556px){
+    main{
+        h1{
+            font-size: 60px;
+        }
+    }
+    footer{
+        .sociauxWrapup{
+            flex-direction: column;
+            img:nth-child(1){
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+
+
+
+/***************FIN STYLE < 556**********************/
