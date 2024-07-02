@@ -135,11 +135,30 @@ footer .sociauxWrapup img:nth-child(1) {
   main h1 {
     font-size: 60px;
   }
-  footer .sociauxWrapup {
+  footer {
     flex-direction: column;
+    align-items: center;
   }
-  footer .sociauxWrapup img:nth-child(1) {
-    margin-bottom: 5px;
+  footer .contactWrapup__contact {
+    align-items: center;
+    justify-content: center;
+  }
+  footer .contactWrapup__contact img {
+    display: none;
   }
 }
-/***************FIN STYLE < 556**********************//*# sourceMappingURL=style.css.map */
+/***************FIN STYLE < 556**********************/
+/**************DÉBUT STYLE < 420*************/
+@media (max-width: 420px) {
+  body {
+    padding: 40px;
+  }
+  header h2 {
+    font-size: 25px;
+  }
+}
+nav ul li:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+/**************FIN STYLE < 420*************//*# sourceMappingURL=style.css.map */
