@@ -28,6 +28,9 @@ nav {
   height: 100%;
   width: 100%;
 }
+nav .menuHamburger {
+  display: none;
+}
 nav ul {
   list-style-type: none;
   padding: 0;
@@ -46,6 +49,8 @@ nav ul li button {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -53,6 +58,13 @@ main {
 }
 main h1 {
   font-size: 160px;
+}
+main .btnProjets {
+  display: none;
+  border: none;
+  font-weight: 300;
+  font-size: 20px;
+  padding: 10px;
 }
 
 footer {
@@ -146,19 +158,33 @@ footer .sociauxWrapup img:nth-child(1) {
   footer .contactWrapup__contact img {
     display: none;
   }
+  footer .contactWrapup__contact:nth-child(1) {
+    margin: 0;
+  }
 }
 /***************FIN STYLE < 556**********************/
 /**************DÉBUT STYLE < 420*************/
 @media (max-width: 420px) {
   body {
-    padding: 40px;
+    padding: 30px;
   }
   header h2 {
     font-size: 25px;
   }
+  nav .menuHamburger {
+    display: block;
+  }
+  nav ul {
+    display: none;
+  }
+  nav ul li:nth-child(1) {
+    margin-bottom: 10px;
+  }
+  main h1 {
+    font-size: 50px;
+  }
+  main .btnProjets {
+    display: block;
+  }
 }
-nav ul li:nth-child(1) {
-  margin-bottom: 10px;
-}
-
 /**************FIN STYLE < 420*************//*# sourceMappingURL=style.css.map */
