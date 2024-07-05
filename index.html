@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -19,21 +20,44 @@
         </h2>
     </header>
     <nav>
-        <img src="images/menu_hamburger.png"  class="menuHamburger"alt="menu hamburger">
+        <img src="images/menu_hamburger.png"  class="menuHamburger" alt="menu hamburger">
         <ul>
             <li>
                 <img src="images/menu_selection.svg" alt="">
-                <button>ACCUEIL</button>
+                <button class="btnAccueil">ACCUEIL</button>
             </li>
             <li>
                 <img src="images/menu_selection.svg" alt="">
-                <button>PROJETS</button>
+                <button class="btnProjets">PROJETS</button>
             </li>
         </ul>
     </nav>
     <main>
-        <h1>BONJOUR</h1>
+        <div class="byebye"><!--  <--- div a retirer apres les tests B)  -->
+        <h1 class="titre">BONJOUR</h1>
         <button class="btnProjets">VOIR LES PROJETS</button>
+        </div>
+
+
+
+        <!--DÉBUT ZONE DE TEST !!DANGER ZONE!! SCARY SCARY-->
+
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/projet01_biota.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/projet02_grotte.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/projet03_canevas-cosmique.png" alt="">
+                </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+        </div>
+
+        <!--FIN ZONE DE TEST !!DANGER ZONE!! SCARY SCARY-->
     </main>
     <footer>
         <div class="contactWrapup">
@@ -51,6 +75,8 @@
             <img src="images/icon_linkedin.png" alt="">
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

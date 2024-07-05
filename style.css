@@ -187,4 +187,23 @@ footer .sociauxWrapup img:nth-child(1) {
     display: block;
   }
 }
-/**************FIN STYLE < 420*************//*# sourceMappingURL=style.css.map */
+/**************FIN STYLE < 420*************/
+.byebye {
+  display: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+main {
+  width: 100vw;
+  background-color: rgba(0, 0, 255, 0.178);
+}
+
+.swiper-wrapper .swiper-slide img {
+  width: 400px;
+  height: 348px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=style.css.map */
