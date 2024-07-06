@@ -45,11 +45,23 @@ btnAccueil.addEventListener("click",function(){
 /********DÉBUT SWIPER GAMING BABY**********/ 
 
 const swiper = new Swiper(".swiper", {
-    loop: true,
-    slidesPerView: "auto",
-    scrollbar:{
-        el:'.swiper-scrollbar',
-    }
+    
+    slideToClickedSlide: true,
+    slidesPerView: "2",
+    freeMode: {
+        enabled: true,
+        sticky: false,
+        momentumBounce: false,
+        },
+    mousewheel: {
+        enabled: true,
+        sensitivity: 4,
+        },
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        draggable: true,
+        dragSize: 100,
+        }
 })
 
 

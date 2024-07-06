@@ -198,12 +198,31 @@ body {
 
 main {
   width: 100vw;
-  background-color: rgba(0, 0, 255, 0.178);
 }
 
-.swiper-wrapper .swiper-slide img {
+.swiper {
+  height: 100vh;
+  width: 100%;
+}
+.swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper .swiper-wrapper .swiper-slide img {
   width: 400px;
   height: 348px;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.swiper-wrapper {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+
+.swiper-scrollbar-drag {
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  background: rgba(0, 0, 0, 0.4);
 }/*# sourceMappingURL=style.css.map */

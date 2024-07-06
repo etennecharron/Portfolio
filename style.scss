@@ -260,14 +260,33 @@ body{
 }
 main{
     width: 100vw;
-    background-color: rgba(0, 0, 255, 0.178);
 }
-.swiper-wrapper{
-    .swiper-slide{
-        img{
-            width: 400px;
-            height: 348px;
-            object-fit: cover;
+.swiper{
+    height: 100vh;
+    width: 100%;
+    .swiper-wrapper{
+        .swiper-slide{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 400px;
+                height: 348px;
+                object-fit: cover;
+
+            }
         }
     }
+}
+
+
+
+.swiper-wrapper{
+    display: flex;
+    transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+}
+.swiper-scrollbar-drag{
+    height: 100%;
+    transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    background: rgba(0,0,0,.4);
 }
