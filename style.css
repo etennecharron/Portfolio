@@ -370,10 +370,17 @@ footer .sociauxWrapup img:nth-child(1) {
     display: block;
   }
   .oeuvreWrapup {
-    height: 65%;
+    height: 50%;
   }
   .oeuvreWrapup__contenus {
     padding: 0px 20px;
+  }
+  .oeuvreWrapup__contenus__ecran {
+    padding: 65px 0px 20px 0px;
+  }
+  .oeuvreWrapup__contenus__ecran__x img {
+    width: 25px;
+    height: 25px;
   }
 }
 /**************FIN STYLE < 420*************/

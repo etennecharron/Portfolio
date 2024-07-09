@@ -436,9 +436,19 @@ footer{
         }
     }
     .oeuvreWrapup{
-        height: 65%;
+        height: 50%;
         &__contenus{
             padding: 0px 20px;
+            &__ecran{
+                padding: 65px 0px 20px 0px;
+                &__x{
+                    img{
+                        width: 25px;
+                    height: 25px;
+                    }
+                    
+                }
+            }
         }
         }
 }
