@@ -321,6 +321,7 @@ footer .sociauxWrapup img:nth-child(1) {
   }
   .oeuvreWrapup__contenus {
     width: 100%;
+    padding: 0 40px;
   }
 }
 /**************FIN STYLE < 738******************************/
@@ -369,7 +370,10 @@ footer .sociauxWrapup img:nth-child(1) {
     display: block;
   }
   .oeuvreWrapup {
-    height: 70%;
+    height: 65%;
+  }
+  .oeuvreWrapup__contenus {
+    padding: 0px 20px;
   }
 }
 /**************FIN STYLE < 420*************/

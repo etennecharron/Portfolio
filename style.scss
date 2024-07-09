@@ -357,6 +357,7 @@ footer{
         }
         &__contenus{
             width: 100%;
+            padding:0 40px;
         }
     }
 
@@ -435,7 +436,10 @@ footer{
         }
     }
     .oeuvreWrapup{
-        height: 70%;
+        height: 65%;
+        &__contenus{
+            padding: 0px 20px;
+        }
         }
 }
 
