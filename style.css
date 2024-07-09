@@ -298,6 +298,9 @@ footer .sociauxWrapup img:nth-child(1) {
     font-size: 30px;
     width: 150px;
   }
+  nav {
+    display: none;
+  }
   nav ul li img {
     width: 40px;
   }
@@ -309,6 +312,15 @@ footer .sociauxWrapup img:nth-child(1) {
   }
   footer .contactWrapup {
     flex-direction: column-reverse;
+  }
+  .oeuvreWrapup {
+    height: 60%;
+  }
+  .oeuvreWrapup__img {
+    display: none;
+  }
+  .oeuvreWrapup__contenus {
+    width: 100%;
   }
 }
 /**************FIN STYLE < 738******************************/
@@ -355,6 +367,9 @@ footer .sociauxWrapup img:nth-child(1) {
   }
   main .btnProjets {
     display: block;
+  }
+  .oeuvreWrapup {
+    height: 70%;
   }
 }
 /**************FIN STYLE < 420*************/

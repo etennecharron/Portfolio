@@ -328,6 +328,7 @@ footer{
         }
     }
     nav{
+        display: none;
         ul{
             li{
                 img{
@@ -349,6 +350,16 @@ footer{
             flex-direction: column-reverse;
         }
     }
+    .oeuvreWrapup{
+        height: 60%;
+        &__img{
+            display: none;
+        }
+        &__contenus{
+            width: 100%;
+        }
+    }
+
     }
 
 /**************FIN STYLE < 738******************************/
@@ -423,6 +434,9 @@ footer{
             display: block;
         }
     }
+    .oeuvreWrapup{
+        height: 70%;
+        }
 }
 
 /**************FIN STYLE < 420*************/
