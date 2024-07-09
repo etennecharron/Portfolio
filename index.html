@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h2>
@@ -20,7 +22,7 @@
         </h2>
     </header>
     <nav>
-        <img src="images/menu_hamburger.png"  class="menuHamburger" alt="menu hamburger">
+        <img src="images/menu_hamburger.png" class="menuHamburger" alt="menu hamburger">
         <ul>
             <li>
                 <img src="images/menu_selection.svg" alt="">
@@ -34,16 +36,77 @@
     </nav>
     <main>
         <div class="byebye"><!--  <--- div a retirer apres les tests B)  -->
-        <h1 class="titre">BONJOUR</h1>
-        <button class="btnProjets">VOIR LES PROJETS</button>
+            <h1 class="titre">BONJOUR</h1>
+            <button class="btnProjets">VOIR LES PROJETS</button>
         </div>
 
 
 
         <!--DÉBUT ZONE DE TEST !!DANGER ZONE!! SCARY SCARY-->
+        <div class="oeuvreWrapup">
+            <div class="oeuvreWrapup__img">
+                <img src="images/projet01_biota.jpg" alt="">
+            </div>
+            <div class="oeuvreWrapup__contenus">
+                <div class="oeuvreWrapup__contenus__ecran">
+                    <button class="oeuvreWrapup__contenus__ecran__x"><img src="images/btn_fermer.png" alt=""></button>
+                    <div class="oeuvreWrapup__contenus__ecran__interieur">
+                        <div class="oeuvreWrapup__contenus__ecran__interieur__textes">
+                            <h3>CANEVAS COSMIQUE</h3>
+                            <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce faucibus, felis ut blandit
+                                vestibulum, lacus ipsum consectetur arcu, quis dictum nisl metus eu diam. Nunc efficitur
+                                est
+                                sed posuere semper. Duis sapien odio, pulvinar in eleifend et, tincidunt eu odio.</P>
+                            <h4>Logiciels utilisés</h4>
+                            <ul>
+                                <li>Unity</li>
+                                <li>Touch Designer</li>
+                                <li>Obs</li>
+                                <li>Maya / Blender</li>
+                                <li>Reaper</li>
+                            </ul>
+                        </div>
+                        <div class="oeuvreWrapup__contenus__ecran__interieur__videos">
+                            <iframe src="https://www.youtube.com/embed/TYIZgZ5-SGg?si=Dvpai46RyXvKf_67"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="oeuvreWrapup__contenus__ecran__interieur__images">
+                            <div class="swiperImages">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="images/projet01_biota_contenus01.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="images/projet01_biota_contenus02.jpg" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="images/projet01_biota_contenus03.jpg" alt="">
+                                    </div>
+                                </div>
+                                <!-- If we need pagination -->
+                                <div class="swiper-pagination"></div>
 
-        <div class="swiper">
+                                <!-- If we need navigation buttons -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="swiperOeuvres byebye">
             <div class="swiper-wrapper">
+                <!--3 premières slides sont vide pour que les oeuvres n'apparaissent pas au début-->
+                <div class="swiper-slide">
+                </div>
+                <div class="swiper-slide">
+                </div>
+                <div class="swiper-slide">
+                </div>
                 <div class="swiper-slide">
                     <img src="images/projet01_biota.jpg" alt="">
                 </div>
@@ -79,4 +142,5 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
