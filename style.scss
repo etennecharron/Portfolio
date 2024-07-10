@@ -127,20 +127,28 @@ footer{
         }
     }
 }
+
+
 .swiperOeuvres .swiper-scrollbar{
     display: none;
 }
 
+    .swiperOeuvres .swiper-wrapper{
+        display: flex;
+        transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+    }
 
-.swiperOeuvres .swiper-wrapper{
-    display: flex;
-    transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-}
-.swiperOeuvres .swiper-scrollbar-drag{
-    height: 100%;
-    transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
-    background: rgba(0,0,0,.4);
-}
+
+    /* CODE LOWKEY INDÉSIRABLE 
+    .swiperOeuvres .swiper-scrollbar-drag{
+        height: 100%;
+        transition: transform .5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+        background: rgba(0,0,0,.4);
+    }
+        */
+
+
+
 
 
 
