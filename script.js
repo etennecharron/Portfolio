@@ -74,12 +74,14 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
         1200:{
             slidesPerView:3,
             mousewheel:{
+                enabled: true,
                 sensitivity:5,
             }
         },
         800:{
             slidesPerView:2,
             mousewheel:{
+                enabled: true,
                 sensitivity:5,
             }
         }
@@ -90,7 +92,7 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
         momentumBounce: false,
         },
     mousewheel: {
-        enabled: true,
+        enabled: false,
         sensitivity: 1,
         },
     scrollbar: {
