@@ -67,7 +67,9 @@ btnAccueil.addEventListener("click",function(){
 /******* swiper pour les oeuvres**********/ 
 const swiperOeuvres = new Swiper(".swiperOeuvres", {
     slideToClickedSlide: true,
+    freeMode: true,
     slidesPerView:1,
+    spaceBetween: 30,
     breakpoints:{
         1200:{
             slidesPerView:3,
@@ -83,7 +85,7 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
         },
     mousewheel: {
         enabled: true,
-        sensitivity: 10,
+        sensitivity: 5,
         },
     scrollbar: {
         el: '.swiper-scrollbar',
