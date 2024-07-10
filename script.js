@@ -73,9 +73,15 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
     breakpoints:{
         1200:{
             slidesPerView:3,
+            mousewheel:{
+                sensitivity:5,
+            }
         },
         800:{
             slidesPerView:2,
+            mousewheel:{
+                sensitivity:5,
+            }
         }
     },
     freeMode: {
@@ -85,7 +91,7 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
         },
     mousewheel: {
         enabled: true,
-        sensitivity: 5,
+        sensitivity: 1,
         },
     scrollbar: {
         el: '.swiper-scrollbar',
