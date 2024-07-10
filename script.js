@@ -67,7 +67,6 @@ btnAccueil.addEventListener("click",function(){
 /******* swiper pour les oeuvres**********/ 
 const swiperOeuvres = new Swiper(".swiperOeuvres", {
     slideToClickedSlide: true,
-    freeMode: true,
     slidesPerView:1,
     spaceBetween: 100,
     breakpoints:{
