@@ -5,6 +5,10 @@ let titre = document.querySelector(".titre");
 
 let oeuvresArr = document.querySelectorAll(".swiperOeuvres .swiper-slide img")
 
+let btnFermerOeuvre = document.querySelector(".oeuvreWrapup__contenus__ecran__x");
+let oeuvreOuvert = document.querySelector(".oeuvreWrapup");
+let carousselOeuvres = document.querySelector(".swiperOeuvres");
+
 /*****modifie la position des oeuvre sur la position des Y**********/
 let toggleHautBas = false;
 oeuvresArr.forEach((oeuvre)=>{
@@ -34,7 +38,7 @@ let contenus = {
     
 }
 
-// BOUTON PROJETS (CHANGE LE CONTENUS DE LA PAGE)
+/**** Bouton projet (CHANGE LE CONTENUS DE LA PAGE)*****/
 btnProjets.addEventListener("click",function(){
     if(contenus.projets.active == false){
 
@@ -47,7 +51,7 @@ btnProjets.addEventListener("click",function(){
     }
 });
 
-// BOUTON ACCUEIL (CHANGE LE CONTENUS DE LA PAGE)
+/**Bouton accueil (CHANGE LE CONTENUS DE LA PAGE)***/
 btnAccueil.addEventListener("click",function(){
     if(contenus.accueil.active == false){
 
@@ -60,12 +64,18 @@ btnAccueil.addEventListener("click",function(){
 });
 
 
-
-/********DÉBUT SWIPER GAMING BABY**********/ 
-
+/******* swiper pour les oeuvres**********/ 
 const swiperOeuvres = new Swiper(".swiperOeuvres", {
     slideToClickedSlide: true,
-    slidesPerView: "3",
+    slidesPerView:1,
+    breakpoints:{
+        1200:{
+            slidesPerView:3,
+        },
+        800:{
+            slidesPerView:2,
+        }
+    },
     freeMode: {
         enabled: true,
         sticky: false,
@@ -83,6 +93,7 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
 })
 
 
+/********swiper pour les images de l'oeuvre**********/ 
 const swiperImages = new Swiper(".swiperImages",{
 slidesPerView:1,
 loop:true,
@@ -94,4 +105,10 @@ navigation: {
     prevEl: '.swiper-button-prev',
 },
 })
-/********FIN SWIPER GAMING BABY**********/ 
+
+
+/***********Ferme Oeuvre ouvert**********/
+btnFermerOeuvre.addEventListener("click",function(){
+    oeuvreOuvert.classList.add("desactiver");
+    carousselOeuvres.classList.remove("desactiver");
+})
