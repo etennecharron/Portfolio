@@ -11,7 +11,7 @@ let carousselOeuvres = document.querySelector(".swiperOeuvres");
 
 let oeuvres = [
     {
-        titre:"Biota",
+        titre:"BIOTA",
         imgPresentation:"images/projet01_biota.jpg",
         description:"BITOA est un projet réalisé dans le cadre d'un cours d'animation 3D et de conception sonore. L'histoire d'une créature a une forme humanoïde triste et seule. Sa tristesse fait naître la vie et redonne de la couleur à son monde. J'ai réalisé le montage vidéo sur Davinci Resolve, créé les sons sur VCV Rack et réalisé la création 3D du personnage et son animation sur MAYA.",
         logiciels:["Unity","Davinci Resolve","Maya","Repear"],
@@ -20,14 +20,14 @@ let oeuvres = [
             "images/projet01_biota_contenus02.jpg",
             "images/projet01_biota_contenus03.jpg"],
     },{
-    titre:"La grotte",
+    titre:"LA GROTTE",
     imgPresentation:"images/projet02_grotte.jpg",
-    description:"La grotte est un jeu d'évasion où le but est de s'échapper de la grotte où l'on est enfermé grace à la réussite d'énigmes. Les énigmes étaient réalisables grâce à une boîte orange imprimée en 3D qui contenait des composantes comme un détecteur de lumière, 3 boutons, un potentiomètre et un détecteur de temps de vol. Dans le projet, j'ai réaliser avec l'aide de mes collegues le design du jeu et le fonctionnement des énigmes. De plus, j'ai réaliser la programation complète du jeu sur unity et Arduino ide.",
+    description:"LA GROTTE est un jeu d'évasion où le but est de s'échapper de la grotte où l'on est enfermé grace à la réussite d'énigmes. Les énigmes étaient réalisables grâce à une boîte orange imprimée en 3D qui contenait des composantes comme un détecteur de lumière, 3 boutons, un potentiomètre et un détecteur de temps de vol. Dans le projet, j'ai réaliser avec l'aide de mes collegues le design du jeu et le fonctionnement des énigmes. De plus, j'ai réaliser la programation complète du jeu sur unity et Arduino ide.",
     logiciels:["Unity","Arduino ide","Max","VCV Rack","Adobe Illustrator","Maya"],
     iframe:[],
     images:["images/projet02_grotte_contenus01.jpg","images/projet02_grotte_contenus02.jpg","images/projet02_grotte_contenus03.jpg","images/projet02_grotte_contenus04.png"],
 },{
-    titre:"Canevas cosmique",
+    titre:"CANEVAS COSMIQUE",
     imgPresentation:"images/projet03_canevas-cosmique.png",
     description:"Vous vous retrouvez dans un laboratoire contenant une table, après un peu de recherche vous découvrez que sur l'écran au dessus de celle-ci se trouve une simulation d'un système solaire avec laquelle vous pouvez intéragir en déposant des statues déclancheant différents phénomènes. Vous êtes invité à expérimenter sur cette table, jusqu'à ce que les scientifiques reviennent du moins...",
     logiciels:["Unity","Touch Designer","Davinci Resolve","Maya/Blender","Repear","Figma","OBS"],
@@ -38,6 +38,7 @@ let oeuvres = [
 }
 ]
 let carousselOeuvresSlides = document.querySelector(".swiperOeuvres .swiper-wrapper");
+let imgOeuvreSelectionner = document.querySelector(".oeuvreWrapup__img");
 let titreOeuvre = document.querySelector(".titreOeuvre")
 let paragrapheOeuvre = document.querySelector(".paragrapheOeuvre");
 let logicielsOeuvre = document.querySelector(".logicielsOeuvre");
@@ -49,7 +50,38 @@ oeuvres.forEach((oeuvre)=>
                     <img class="oeuvre" src="${oeuvre.imgPresentation}" alt="">
                 </div>`
 );
-oeuvresArr = document.querySelectorAll(".swiperOeuvres .swiper-slide oeuvre");
+
+/*REMPLIS LES INFORMATIONS DE L'OEUVRE LORSQU'ON CLIQUE SUR L'IMAGE*/
+oeuvresArr = document.querySelectorAll(".swiperOeuvres .swiper-slide .oeuvre");
+for(let i = 0; i < oeuvresArr.length; i++){
+    oeuvresArr[i].addEventListener("click", function(){
+        carousselOeuvres.classList.add("desactiver");
+        oeuvreOuvert.classList.remove("desactiver");
+        //image sur le coter
+        imgOeuvreSelectionner.innerHTML= `<img src="${oeuvres[i].imgPresentation}">`
+        //tire
+        titreOeuvre.innerText = oeuvres[i].titre;
+        //paragraphe description
+        paragrapheOeuvre.innerText = oeuvres[i].description
+        //list logiciels
+        logicielsOeuvre.innerHTML = "";
+        oeuvres[i].logiciels.forEach((logiciel)=>{ 
+            logicielsOeuvre.innerHTML = logicielsOeuvre.innerHTML + `<li>${logiciel}</li>`;
+        });
+        //videos
+        videosOeuvre.innerHTML = "";
+        oeuvres[i].iframe.forEach((iframe)=>{
+            videosOeuvre.innerHTML = videosOeuvre.innerHTML + iframe;
+        })
+        //images
+        imagesOeuvre.innerHTML = "";
+        oeuvres[i].images.forEach((image)=>{
+            imagesOeuvre.innerHTML = imagesOeuvre.innerHTML + `<div class="swiper-slide">
+            <img src="${image}" alt="">
+        </div>`;
+        })
+    })
+}
 
 /*****modifie la position des oeuvre sur la position des Y**********/
 let toggleHautBas = false;
