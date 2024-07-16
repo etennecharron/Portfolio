@@ -75,11 +75,13 @@ for(let i = 0; i < oeuvresArr.length; i++){
         })
         //images
         imagesOeuvre.innerHTML = "";
+        
         oeuvres[i].images.forEach((image)=>{
-            imagesOeuvre.innerHTML = imagesOeuvre.innerHTML + `<div class="swiper-slide">
-            <img src="${image}" alt="">
-        </div>`;
+                imagesOeuvre.innerHTML = imagesOeuvre.innerHTML + `<div class="swiper-slide">
+                <img src="${image}" alt="">
+            </div>`  
         })
+        swiperImages.slideTo(0);
     })
 }
 
@@ -179,10 +181,6 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
 /********swiper pour les images de l'oeuvre**********/ 
 const swiperImages = new Swiper(".swiperImages",{
 slidesPerView:1,
-loop:true,
-pagination: {
-    el: '.swiper-pagination',
-},
 navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
@@ -194,4 +192,24 @@ navigation: {
 btnFermerOeuvre.addEventListener("click",function(){
     oeuvreOuvert.classList.add("desactiver");
     carousselOeuvres.classList.remove("desactiver");
+})
+
+
+
+
+let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
+
+window.addEventListener("resize",function(){
+    console.log(window.innerWidth);
+    oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
+    if(this.innerWidth > 1200 && oeuvresVideArr.length<3){ 
+        addSlide(1, '<div class="swiper-slide"></div>')
+    }
+    else if(this.innerWidth<1200 && this.innerWidth > 800 && oeuvresVideArr.length >= 2){
+            swiperOeuvres.removeSlide(0);
+    }
+    else if(this.innerWidth<800 && oeuvresVideArr.length >= 3){
+        swiperOeuvres.removeSlide(0);
+        swiperOeuvres.removeSlide(1)
+    }
 })
