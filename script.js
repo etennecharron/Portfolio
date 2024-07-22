@@ -44,7 +44,7 @@ let paragrapheOeuvre = document.querySelector(".paragrapheOeuvre");
 let logicielsOeuvre = document.querySelector(".logicielsOeuvre");
 let videosOeuvre = document.querySelector(".videosOeuvre");
 let imagesOeuvre = document.querySelector(".imagesOeuvre");
-
+let oeuvreContenus = document.querySelector(".oeuvreWrapup__contenus__ecran__interieur");
 oeuvres.forEach((oeuvre)=>
     carousselOeuvresSlides.innerHTML = carousselOeuvresSlides.innerHTML +`<div class="swiper-slide">
                     <img class="oeuvre" src="${oeuvre.imgPresentation}" alt="">
@@ -82,6 +82,7 @@ for(let i = 0; i < oeuvresArr.length; i++){
             </div>`  
         })
         swiperImages.slideTo(0);
+        oeuvreContenus.scrollTo(0,0);
     })
 }
 
@@ -197,6 +198,9 @@ btnFermerOeuvre.addEventListener("click",function(){
 
 
 
+
+
+/************************************A TRAVAILLER DESSUS******************************/
 let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
 
 window.addEventListener("resize",function(){
