@@ -17,6 +17,8 @@ body {
 }
 
 header {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
 }
@@ -55,6 +57,7 @@ main {
   display: flex;
   flex-direction: column;
   position: absolute;
+  z-index: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -71,6 +74,8 @@ main .btnProjets {
 }
 
 footer {
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
@@ -84,7 +89,8 @@ footer .contactWrapup__contact {
 }
 footer .contactWrapup__contact img {
   width: 35px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   margin-right: 5px;
 }
 footer .contactWrapup__contact p {
@@ -100,7 +106,8 @@ footer .sociauxWrapup {
 }
 footer .sociauxWrapup img {
   width: 50px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 footer .sociauxWrapup img:nth-child(1) {
   margin-right: 10px;
@@ -109,7 +116,9 @@ footer .sociauxWrapup img:nth-child(1) {
 .swiperOeuvres {
   height: 100vh;
   width: 100%;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .swiperOeuvres .swiper-wrapper .swiper-slide {
   display: flex;
@@ -119,7 +128,8 @@ footer .sociauxWrapup img:nth-child(1) {
 .swiperOeuvres .swiper-wrapper .swiper-slide img {
   width: 400px;
   height: 348px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .swiperOeuvres .swiper-scrollbar {
@@ -157,6 +167,9 @@ footer .sociauxWrapup img:nth-child(1) {
   align-items: center;
 }
 .oeuvreWrapup__img img {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   width: 100%;
   aspect-ratio: 1;
   border-radius: 100%;
@@ -181,6 +194,9 @@ footer .sociauxWrapup img:nth-child(1) {
   right: 20px;
   background-color: transparent;
   border: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .oeuvreWrapup__contenus__ecran__interieur {
   padding: 20px;
@@ -220,6 +236,9 @@ footer .sociauxWrapup img:nth-child(1) {
   align-items: center;
 }
 .oeuvreWrapup__contenus__ecran__interieur__videos iframe {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   margin: 10px;
   width: 100%;
   height: 360px;
@@ -229,11 +248,15 @@ footer .sociauxWrapup img:nth-child(1) {
   width: 100%;
 }
 .oeuvreWrapup__contenus__ecran__interieur__images img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
   height: 100%;
   max-width: 590px;
   margin: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .swiperImages {
