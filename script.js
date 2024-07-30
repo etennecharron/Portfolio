@@ -86,7 +86,7 @@ for (let i = 0; i < oeuvresArr.length; i++) {
             })
             swiperImages.slideTo(0);
         }
-        else{
+        else {
             document.querySelector(".oeuvreWrapup__contenus__ecran__interieur__images").classList.add("desactiver");
         }
         oeuvreContenus.scrollTo(0, 0);
@@ -153,6 +153,8 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
     slideToClickedSlide: true,
     slidesPerView: 1,
     spaceBetween: 100,
+    cssWidthAndHeight: true,
+    autoResize: false,
     breakpoints: {
         1200: {
             slidesPerView: 3,
@@ -206,21 +208,65 @@ btnFermerOeuvre.addEventListener("click", function () {
 
 
 
-
-/************************************A TRAVAILLER DESSUS******************************/
-let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
-
+/***rajoute et enleve des slide vide si la taille de l'ecran se modifie****/
 window.addEventListener("resize", function () {
-    console.log(window.innerWidth);
-    oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
-    if (this.innerWidth > 1200 && oeuvresVideArr.length < 3) {
-        addSlide(1, '<div class="swiper-slide"></div>')
+    //console.log(window.innerWidth);
+    if (this.innerWidth > 1200) {
+        let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
+        oeuvresVideArr.forEach(() => {
+            swiperOeuvres.removeSlide(0);
+        });
+        swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+        swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+        swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+        swiperOeuvres.slideTo(0);
     }
-    else if (this.innerWidth < 1200 && this.innerWidth > 800 && oeuvresVideArr.length >= 2) {
-        swiperOeuvres.removeSlide(0);
+    else if (this.innerWidth < 1200 && this.innerWidth > 800) {
+        let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
+        oeuvresVideArr.forEach(() => {
+            swiperOeuvres.removeSlide(0);
+        });
+        swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+        swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+        swiperOeuvres.slideTo(0);
     }
-    else if (this.innerWidth < 800 && oeuvresVideArr.length >= 3) {
-        swiperOeuvres.removeSlide(0);
-        swiperOeuvres.removeSlide(1)
+    else if (this.innerWidth < 800) {
+        let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
+        oeuvresVideArr.forEach(() => {
+            swiperOeuvres.removeSlide(0);
+        });
+        swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+        swiperOeuvres.slideTo(0);
     }
 })
+
+
+/**rajoute et enleve des slides vide lorsque la page s'ouvre**/
+if (window.innerWidth > 1200) {
+    let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
+    oeuvresVideArr.forEach(() => {
+        swiperOeuvres.removeSlide(0);
+    });
+    swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+    swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+    swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+    swiperOeuvres.slideTo(0);
+}
+else if (window.innerWidth < 1200 && window.innerWidth > 800) {
+    let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
+    oeuvresVideArr.forEach(() => {
+        swiperOeuvres.removeSlide(0);
+    });
+    swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+    swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+    swiperOeuvres.slideTo(0);
+}
+else if (window.innerWidth < 800) {
+    let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
+    console.log(oeuvresVideArr.length);
+    oeuvresVideArr.forEach(() => {
+        swiperOeuvres.removeSlide(0);
+    });
+    swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
+    swiperOeuvres.slideTo(0);
+}

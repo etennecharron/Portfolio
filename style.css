@@ -73,6 +73,10 @@ main .btnProjets {
   padding: 10px;
 }
 
+main:active {
+  cursor: pointer;
+}
+
 footer {
   position: relative;
   z-index: 1;
