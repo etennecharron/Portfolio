@@ -381,7 +381,15 @@ footer{
             padding:0 40px;
         }
     }
-
+    .swiperOeuvres{
+        .swiper-wrapper{
+            .swiper-slide{
+                img{
+                    width:80%;
+                }
+            }
+        }
+    }
     }
 
 /**************FIN STYLE < 738******************************/
