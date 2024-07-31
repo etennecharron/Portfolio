@@ -152,7 +152,6 @@ btnAccueil.addEventListener("click", function () {
 const swiperOeuvres = new Swiper(".swiperOeuvres", {
     slideToClickedSlide: true,
     slidesPerView: 1,
-    spaceBetween: 100,
     cssWidthAndHeight: true,
     autoResize: false,
     breakpoints: {
