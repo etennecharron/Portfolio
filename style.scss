@@ -385,7 +385,9 @@ footer{
         .swiper-wrapper{
             .swiper-slide{
                 img{
-                    width:80%;
+                    width:60%;
+                    aspect-ratio: 1;
+                    height: auto;
                 }
             }
         }
