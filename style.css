@@ -140,11 +140,12 @@ footer .sociauxWrapup img:nth-child(1) {
   display: none;
 }
 
-.swiperOeuvres .swiper-wrapper {
-  display: flex;
-  transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+@media (min-width: 800px) {
+  .swiperOeuvres .swiper-wrapper {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  }
 }
-
 /**
 .swiperOeuvres .swiper-scrollbar-drag{
     height: 100%;
