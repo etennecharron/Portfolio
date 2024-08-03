@@ -136,10 +136,6 @@ footer .sociauxWrapup img:nth-child(1) {
      object-fit: cover;
 }
 
-.swiperOeuvres .swiper-scrollbar {
-  display: none;
-}
-
 @media (min-width: 800px) {
   .swiperOeuvres .swiper-wrapper {
     display: flex;

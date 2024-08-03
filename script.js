@@ -157,17 +157,21 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
     breakpoints: {
         1200: {
             slidesPerView: 3,
+            /** 
             mousewheel: {
                 enabled: true,
                 sensitivity: 5,
             }
+                */
         },
         800: {
             slidesPerView: 2,
+            /*
             mousewheel: {
                 enabled: true,
                 sensitivity: 5,
             }
+                */
         }
     },
     freeMode: {
@@ -176,14 +180,9 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
         momentumBounce: false,
     },
     mousewheel: {
-        enabled: false,
-        sensitivity: 1,
+        enabled: true,
+        sensitivity: 5,
     },
-    scrollbar: {
-        el: '.swiper-scrollbar',
-        draggable: true,
-        dragSize: 100,
-    }
 })
 
 
