@@ -1,8 +1,9 @@
-let btnAccueil = document.querySelector(".btnAccueil");
-let btnProjets = document.querySelector(".btnProjets");
+//let btnAccueil = document.querySelector(".btnAccueil");
+let btnProjets = document.querySelector(".btnProjets01");
+let imgSroll = document.querySelector(".imgSroll");
 
 let titre = document.querySelector(".titre");
-
+let contenusPage = document.querySelector(".contenusPage");
 let oeuvresArr;
 
 let btnFermerOeuvre = document.querySelector(".oeuvreWrapup__contenus__ecran__x");
@@ -13,6 +14,7 @@ let oeuvres = [
     {
         titre: "BIOTA",
         imgPresentation: "images/projet01_biota.jpg",
+        couleur:"pink",
         description: "BITOA est un projet réalisé dans le cadre d'un cours d'animation 3D et de conception sonore. L'histoire d'une créature a une forme humanoïde triste et seule. Sa tristesse fait naître la vie et redonne de la couleur à son monde. J'ai réalisé le montage vidéo sur Davinci Resolve, créé les sons sur VCV Rack et réalisé la création 3D du personnage et son animation sur MAYA.",
         logiciels: ["Unity", "Davinci Resolve", "Maya", "Repear"],
         iframe: [`<iframe src="https://www.youtube.com/embed/TYIZgZ5-SGg?si=Dvpai46RyXvKf_67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`],
@@ -22,12 +24,14 @@ let oeuvres = [
     }, {
         titre: "LA GROTTE",
         imgPresentation: "images/projet02_grotte.jpg",
+        couleur:"orange",
         description: "LA GROTTE est un jeu d'évasion où le but est de s'échapper de la grotte où l'on est enfermé grace à la réussite d'énigmes. Les énigmes étaient réalisables grâce à une boîte orange imprimée en 3D qui contenait des composantes comme un détecteur de lumière, 3 boutons, un potentiomètre et un détecteur de temps de vol. Dans le projet, j'ai réaliser avec l'aide de mes collegues le design du jeu et le fonctionnement des énigmes. De plus, j'ai réaliser la programation complète du jeu sur unity et Arduino ide.",
         logiciels: ["Unity", "Arduino ide", "Max", "VCV Rack", "Adobe Illustrator", "Maya"],
         iframe: [],
         images: ["images/projet02_grotte_contenus01.jpg", "images/projet02_grotte_contenus02.jpg", "images/projet02_grotte_contenus03.jpg", "images/projet02_grotte_contenus04.png"],
     }, {
         titre: "CANEVAS COSMIQUE",
+        couleur:"purple",
         imgPresentation: "images/projet03_canevas-cosmique.png",
         description: "Vous vous retrouvez dans un laboratoire contenant une table, après un peu de recherche vous découvrez que sur l'écran au dessus de celle-ci se trouve une simulation d'un système solaire avec laquelle vous pouvez intéragir en déposant des statues déclancheant différents phénomènes. Vous êtes invité à expérimenter sur cette table, jusqu'à ce que les scientifiques reviennent du moins...",
         logiciels: ["Unity", "Touch Designer", "Davinci Resolve", "Maya/Blender", "Repear", "Figma", "OBS"],
@@ -43,11 +47,12 @@ let logicielsOeuvre = document.querySelector(".logicielsOeuvre");
 let videosOeuvre = document.querySelector(".videosOeuvre");
 let imagesOeuvre = document.querySelector(".imagesOeuvre");
 let oeuvreContenus = document.querySelector(".oeuvreWrapup__contenus__ecran__interieur");
-oeuvres.forEach((oeuvre) =>
+oeuvres.forEach((oeuvre) =>{
     carousselOeuvresSlides.innerHTML = carousselOeuvresSlides.innerHTML + `<div class="swiper-slide">
-                    <img class="oeuvre" src="${oeuvre.imgPresentation}" alt="">
-                </div>`
-);
+    <img class="oeuvre" src="${oeuvre.imgPresentation}" alt="">
+</div>`;
+
+});
 
 /*REMPLIS LES INFORMATIONS DE L'OEUVRE LORSQU'ON CLIQUE SUR L'IMAGE*/
 oeuvresArr = document.querySelectorAll(".swiperOeuvres .swiper-slide .oeuvre");
@@ -119,23 +124,35 @@ let contenus = {
         active: false,
         titre: "PROJETS",
     }
-
 }
 
-/**** Bouton projet (CHANGE LE CONTENUS DE LA PAGE)*****/
+/**** Bouton projet (CHANGE LE CONTENUS DE LA PAGE POUR LA PAGE PROJET)*****/
+let contenusDesactiver = false;
+
 btnProjets.addEventListener("click", function () {
+    
     if (contenus.projets.active == false) {
 
         contenus.accueil.active = false;
         contenus.projets.active = true;
 
+        btnProjets.classList.add("desactiver");
+        imgSroll.classList.remove("desactiver");
+
         titre.innerText = contenus.projets.titre;
+    }
+});
 
-
+addEventListener("wheel", function () {
+    if (contenus.projets.active == true && contenusDesactiver == false) {
+        contenusDesactiver = true;
+        contenusPage.classList.add("desactiver");
+        carousselOeuvres.classList.remove("desactiver");
     }
 });
 
 /**Bouton accueil (CHANGE LE CONTENUS DE LA PAGE)***/
+/** 
 btnAccueil.addEventListener("click", function () {
     if (contenus.accueil.active == false) {
 
@@ -143,36 +160,39 @@ btnAccueil.addEventListener("click", function () {
         contenus.accueil.active = true;
 
         titre.innerText = contenus.accueil.titre;
-
+        
     }
 });
+*/
+
 
 
 /******* swiper pour les oeuvres**********/
 const swiperOeuvres = new Swiper(".swiperOeuvres", {
-    slideToClickedSlide: true,
     slidesPerView: 1,
-    cssWidthAndHeight: true,
-    autoResize: false,
     breakpoints: {
-        1200: {
+        1300: {
             slidesPerView: 3,
-            /** 
             mousewheel: {
                 enabled: true,
                 sensitivity: 5,
-            }
-                */
+            },
         },
-        800: {
+        830: {
             slidesPerView: 2,
-            /*
             mousewheel: {
                 enabled: true,
-                sensitivity: 5,
-            }
-                */
+                sensitivity: 3,
+            },
+        },
+        550:{
+            slidesPerView:1,
+            mousewheel: {
+                enabled: true,
+                sensitivity: 2,
+            },
         }
+        
     },
     freeMode: {
         enabled: true,
@@ -181,7 +201,7 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
     },
     mousewheel: {
         enabled: true,
-        sensitivity: 5,
+        sensitivity: 1,
     },
 })
 
@@ -209,7 +229,7 @@ btnFermerOeuvre.addEventListener("click", function () {
 /***rajoute et enleve des slide vide si la taille de l'ecran se modifie****/
 window.addEventListener("resize", function () {
     //console.log(window.innerWidth);
-    if (this.innerWidth > 1200) {
+    if (this.innerWidth > 1300) {
         let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
         oeuvresVideArr.forEach(() => {
             swiperOeuvres.removeSlide(0);
@@ -219,7 +239,7 @@ window.addEventListener("resize", function () {
         swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
         swiperOeuvres.slideTo(0);
     }
-    else if (this.innerWidth < 1200 && this.innerWidth > 800) {
+    else if (this.innerWidth < 1300 && this.innerWidth > 830) {
         let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
         oeuvresVideArr.forEach(() => {
             swiperOeuvres.removeSlide(0);
@@ -228,7 +248,7 @@ window.addEventListener("resize", function () {
         swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
         swiperOeuvres.slideTo(0);
     }
-    else if (this.innerWidth < 800) {
+    else if (this.innerWidth < 830) {
         let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
         oeuvresVideArr.forEach(() => {
             swiperOeuvres.removeSlide(0);
@@ -240,7 +260,7 @@ window.addEventListener("resize", function () {
 
 
 /**rajoute et enleve des slides vide lorsque la page s'ouvre**/
-if (window.innerWidth > 1200) {
+if (window.innerWidth > 1300) {
     let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
     oeuvresVideArr.forEach(() => {
         swiperOeuvres.removeSlide(0);
@@ -250,7 +270,7 @@ if (window.innerWidth > 1200) {
     swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
     swiperOeuvres.slideTo(0);
 }
-else if (window.innerWidth < 1200 && window.innerWidth > 800) {
+else if (window.innerWidth < 1300 && window.innerWidth > 830) {
     let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
     oeuvresVideArr.forEach(() => {
         swiperOeuvres.removeSlide(0);
@@ -259,7 +279,7 @@ else if (window.innerWidth < 1200 && window.innerWidth > 800) {
     swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
     swiperOeuvres.slideTo(0);
 }
-else if (window.innerWidth < 800) {
+else if (window.innerWidth < 830) {
     let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
     console.log(oeuvresVideArr.length);
     oeuvresVideArr.forEach(() => {
@@ -268,3 +288,10 @@ else if (window.innerWidth < 800) {
     swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
     swiperOeuvres.slideTo(0);
 }
+
+gsap.to('.imgSroll', {
+    repeat:-1,
+    yoyo:true,
+    y: '20%',
+    },
+) 
