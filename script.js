@@ -150,6 +150,21 @@ addEventListener("wheel", function () {
         carousselOeuvres.classList.remove("desactiver");
     }
 });
+let utilisateurPrete = true;
+
+btnProjets.addEventListener("mouseenter",function(){
+    utilisateurPrete = false;
+})
+btnProjets.addEventListener("mouseleave",function(){
+    utilisateurPrete = true;
+})
+document.querySelector("main").addEventListener("click",function(){
+    if (contenus.projets.active == true && contenusDesactiver == false && utilisateurPrete == true) {
+        contenusDesactiver = true;
+        contenusPage.classList.add("desactiver");
+        carousselOeuvres.classList.remove("desactiver");
+    }
+})
 
 /**Bouton accueil (CHANGE LE CONTENUS DE LA PAGE)***/
 /** 
