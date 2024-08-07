@@ -87,6 +87,8 @@ main {
         z-index: 2;
         position: absolute;
         text-align: center;
+        overflow: hidden;
+        height: 300px;
     }
 }
 

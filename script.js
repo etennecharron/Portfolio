@@ -1,6 +1,6 @@
 //let btnAccueil = document.querySelector(".btnAccueil");
 let btnProjets = document.querySelector(".btnProjets01");
-let imgSroll = document.querySelector(".imgSroll");
+let imgScroll = document.querySelector(".imgScroll");
 
 let titre = document.querySelector(".titre");
 let contenusPage = document.querySelector(".contenusPage");
@@ -135,11 +135,49 @@ btnProjets.addEventListener("click", function () {
 
         contenus.accueil.active = false;
         contenus.projets.active = true;
-
-        btnProjets.classList.add("desactiver");
-        imgSroll.classList.remove("desactiver");
-
-        titre.innerText = contenus.projets.titre;
+        
+        //ANIMATION DU TITRE
+        gsap.to(".titre",{
+            y:"-100%",
+            duration:0.3,
+        })
+        setTimeout(()=>{
+            titre.innerText = contenus.projets.titre;
+            gsap.fromTo(".titre",
+                {y:"100%"},
+                {y:"0%",
+                    duration:1,
+                    ease:"back.out",
+                })
+        },200)
+        // ANIMATION POUR BOUTON
+        gsap.to(".btnProjets01",{
+            y:"-600%",
+            duration:0.3
+        })
+        setTimeout(()=>{
+            btnProjets.classList.add("desactiver");
+            imgScroll.classList.remove("desactiver");
+        },500)
+        //ANIMATION POUR ICON INCITATION A SCROLL
+        setTimeout(()=>{
+            gsap.fromTo(".imgScroll",
+                {y:"200%"},
+                {y:"0%",
+                    ease:"back.out",
+                    duration:1,
+                }
+                )
+        },500)
+        
+            setTimeout(()=>{
+                gsap.to('.imgScroll', {
+                    repeat:-1,
+                    yoyo:true,
+                    y: '20%',
+                    },
+                );
+            },1000)
     }
 });
 
@@ -304,9 +342,3 @@ else if (window.innerWidth < 830) {
     swiperOeuvres.slideTo(0);
 }
 
-gsap.to('.imgSroll', {
-    repeat:-1,
-    yoyo:true,
-    y: '20%',
-    },
-) 
