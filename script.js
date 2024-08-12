@@ -136,6 +136,35 @@ btnProjets.addEventListener("click", function () {
         contenus.accueil.active = false;
         contenus.projets.active = true;
         
+
+
+        gsap.to(".animationContenus",{
+            y:"-100%",
+            duration:0.3,
+        });
+        setTimeout(()=>{
+            titre.innerText = contenus.projets.titre; 
+            btnProjets.classList.add("desactiver");
+            imgScroll.classList.remove("desactiver");  
+
+            gsap.fromTo(".animationContenus",
+                {y:"100%"},
+                {y:0,
+                duration:0.8,
+                ease:"back.out"}
+            )
+            setTimeout(()=>{
+                gsap.to('.imgScroll', {
+                    repeat:-1,
+                    yoyo:true,
+                    y: '20%',
+                    },
+                );
+            },1250)
+        },300);
+
+        
+        /** 
         //ANIMATION DU TITRE
         gsap.to(".titre",{
             y:"-100%",
@@ -178,6 +207,7 @@ btnProjets.addEventListener("click", function () {
                     },
                 );
             },1000)
+            */
     }
 });
 
@@ -196,7 +226,8 @@ btnProjets.addEventListener("mouseenter",function(){
 btnProjets.addEventListener("mouseleave",function(){
     utilisateurPrete = true;
 })
-document.querySelector("main").addEventListener("click",function(){
+//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST  CLICK
+document.querySelector("main").addEventListener("swiped-up",function(){
     if (contenus.projets.active == true && contenusDesactiver == false && utilisateurPrete == true) {
         contenusDesactiver = true;
         contenusPage.classList.add("desactiver");
@@ -342,3 +373,7 @@ else if (window.innerWidth < 830) {
     swiperOeuvres.slideTo(0);
 }
 
+addEventListener("wheel",function(){
+//verifie si l'utilisateur est sur la première oeuvre
+//document.querySelectorAll("")
+});
