@@ -14,7 +14,7 @@ let oeuvres = [
     {
         titre: "BIOTA",
         imgPresentation: "images/projet01_biota.jpg",
-        couleur:"pink",
+        couleur: "pink",
         description: "BITOA est un projet réalisé dans le cadre d'un cours d'animation 3D et de conception sonore. L'histoire d'une créature a une forme humanoïde triste et seule. Sa tristesse fait naître la vie et redonne de la couleur à son monde. J'ai réalisé le montage vidéo sur Davinci Resolve, créé les sons sur VCV Rack et réalisé la création 3D du personnage et son animation sur MAYA.",
         logiciels: ["Unity", "Davinci Resolve", "Maya", "Repear"],
         iframe: [`<iframe src="https://www.youtube.com/embed/TYIZgZ5-SGg?si=Dvpai46RyXvKf_67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`],
@@ -24,14 +24,14 @@ let oeuvres = [
     }, {
         titre: "LA GROTTE",
         imgPresentation: "images/projet02_grotte.jpg",
-        couleur:"orange",
+        couleur: "orange",
         description: "LA GROTTE est un jeu d'évasion où le but est de s'échapper de la grotte où l'on est enfermé grace à la réussite d'énigmes. Les énigmes étaient réalisables grâce à une boîte orange imprimée en 3D qui contenait des composantes comme un détecteur de lumière, 3 boutons, un potentiomètre et un détecteur de temps de vol. Dans le projet, j'ai réaliser avec l'aide de mes collegues le design du jeu et le fonctionnement des énigmes. De plus, j'ai réaliser la programation complète du jeu sur unity et Arduino ide.",
         logiciels: ["Unity", "Arduino ide", "Max", "VCV Rack", "Adobe Illustrator", "Maya"],
         iframe: [],
         images: ["images/projet02_grotte_contenus01.jpg", "images/projet02_grotte_contenus02.jpg", "images/projet02_grotte_contenus03.jpg", "images/projet02_grotte_contenus04.png"],
     }, {
         titre: "CANEVAS COSMIQUE",
-        couleur:"purple",
+        couleur: "purple",
         imgPresentation: "images/projet03_canevas-cosmique.png",
         description: "Vous vous retrouvez dans un laboratoire contenant une table, après un peu de recherche vous découvrez que sur l'écran au dessus de celle-ci se trouve une simulation d'un système solaire avec laquelle vous pouvez intéragir en déposant des statues déclancheant différents phénomènes. Vous êtes invité à expérimenter sur cette table, jusqu'à ce que les scientifiques reviennent du moins...",
         logiciels: ["Unity", "Touch Designer", "Davinci Resolve", "Maya/Blender", "Repear", "Figma", "OBS"],
@@ -47,7 +47,7 @@ let logicielsOeuvre = document.querySelector(".logicielsOeuvre");
 let videosOeuvre = document.querySelector(".videosOeuvre");
 let imagesOeuvre = document.querySelector(".imagesOeuvre");
 let oeuvreContenus = document.querySelector(".oeuvreWrapup__contenus__ecran__interieur");
-oeuvres.forEach((oeuvre) =>{
+oeuvres.forEach((oeuvre) => {
     carousselOeuvresSlides.innerHTML = carousselOeuvresSlides.innerHTML + `<div class="swiper-slide">
     <img class="oeuvre" src="${oeuvre.imgPresentation}" alt="">
 </div>`;
@@ -128,127 +128,74 @@ let contenus = {
 
 /**** Bouton projet (CHANGE LE CONTENUS DE LA PAGE POUR LA PAGE PROJET)*****/
 let contenusDesactiver = false;
-
+let animationTerminer = false;
 btnProjets.addEventListener("click", function () {
-    
+
     if (contenus.projets.active == false) {
-
-        contenus.accueil.active = false;
-        contenus.projets.active = true;
-        
-
-
-        gsap.to(".animationContenus",{
-            y:"-100%",
-            duration:0.3,
+        gsap.to(".animationContenus", {
+            y: "-100%",
+            duration: 0.3,
         });
-        setTimeout(()=>{
-            titre.innerText = contenus.projets.titre; 
-            btnProjets.classList.add("desactiver");
-            imgScroll.classList.remove("desactiver");  
+        setTimeout(() => {
 
-            gsap.fromTo(".animationContenus",
-                {y:"100%"},
-                {y:0,
-                duration:0.8,
-                ease:"back.out"}
-            )
-            setTimeout(()=>{
-                gsap.to('.imgScroll', {
-                    repeat:-1,
-                    yoyo:true,
-                    y: '20%',
-                    },
-                );
-            },1250)
-        },300);
+            contenus.accueil.active = false;
+            contenus.projets.active = true;
 
-        
-        /** 
-        //ANIMATION DU TITRE
-        gsap.to(".titre",{
-            y:"-100%",
-            duration:0.3,
-        })
-        setTimeout(()=>{
             titre.innerText = contenus.projets.titre;
-            gsap.fromTo(".titre",
-                {y:"100%"},
-                {y:"0%",
-                    duration:1,
-                    ease:"back.out",
-                })
-        },200)
-        // ANIMATION POUR BOUTON
-        gsap.to(".btnProjets01",{
-            y:"-600%",
-            duration:0.3
-        })
-        setTimeout(()=>{
+
             btnProjets.classList.add("desactiver");
             imgScroll.classList.remove("desactiver");
-        },500)
-        //ANIMATION POUR ICON INCITATION A SCROLL
-        setTimeout(()=>{
-            gsap.fromTo(".imgScroll",
-                {y:"200%"},
-                {y:"0%",
-                    ease:"back.out",
-                    duration:1,
+
+            gsap.fromTo(".animationContenus",
+                { y: "100%" },
+                {
+                    y: 0,
+                    duration: 0.8,
+                    ease: "back.out"
                 }
-                )
-        },500)
-        
-            setTimeout(()=>{
+            )
+            setTimeout(() => {
+                animationTerminer = true;
+                carousselOeuvres.classList.remove("desactiver");
+            }, 900)
+            setTimeout(() => {
                 gsap.to('.imgScroll', {
-                    repeat:-1,
-                    yoyo:true,
+                    repeat: -1,
+                    yoyo: true,
                     y: '20%',
-                    },
+                },
                 );
-            },1000)
-            */
+            }, 1250)
+        }, 300);
     }
 });
 
+
+
+// ANIMATION DE LA PAGE PROJETS POUR FAIRE DISPAITRE LE TITRES QUAND LES OEUVRES SONT PRÉSENTE
+let swiperActif = false;
 addEventListener("wheel", function () {
-    if (contenus.projets.active == true && contenusDesactiver == false) {
-        contenusDesactiver = true;
-        contenusPage.classList.add("desactiver");
-        carousselOeuvres.classList.remove("desactiver");
-    }
+    let length = document.querySelector(".swiperOeuvres .swiper-slide").classList.length;
+    let index = 0;
+    let classeTrouver = false;
+    document.querySelectorAll(".swiperOeuvres .vide").forEach((slide) => {
+        slide.classList.forEach((c) => {
+            index++;
+            if (c == "swiper-slide-active" && contenus.projets.active == true && swiperActif == false && animationTerminer == true) {
+                console.log("partie 01");
+                swiperActif = true;
+                gsap.to(".animationContenus", {
+                    y: "-110%",
+                    duration: 0.3,
+                });
+            }
+            if(c == "swiper-slide-active" && swiperActif == true){
+                console.log("partie 02");
+            }
+
+        })
+    })
 });
-let utilisateurPrete = true;
-
-btnProjets.addEventListener("mouseenter",function(){
-    utilisateurPrete = false;
-})
-btnProjets.addEventListener("mouseleave",function(){
-    utilisateurPrete = true;
-})
-//TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST  CLICK
-document.querySelector("main").addEventListener("swiped-up",function(){
-    if (contenus.projets.active == true && contenusDesactiver == false && utilisateurPrete == true) {
-        contenusDesactiver = true;
-        contenusPage.classList.add("desactiver");
-        carousselOeuvres.classList.remove("desactiver");
-    }
-})
-
-/**Bouton accueil (CHANGE LE CONTENUS DE LA PAGE)***/
-/** 
-btnAccueil.addEventListener("click", function () {
-    if (contenus.accueil.active == false) {
-
-        contenus.projets.active = false;
-        contenus.accueil.active = true;
-
-        titre.innerText = contenus.accueil.titre;
-        
-    }
-});
-*/
-
 
 
 /******* swiper pour les oeuvres**********/
@@ -269,14 +216,14 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
                 sensitivity: 3,
             },
         },
-        550:{
-            slidesPerView:1,
+        550: {
+            slidesPerView: 1,
             mousewheel: {
                 enabled: true,
                 sensitivity: 2,
             },
         }
-        
+
     },
     freeMode: {
         enabled: true,
@@ -373,7 +320,4 @@ else if (window.innerWidth < 830) {
     swiperOeuvres.slideTo(0);
 }
 
-addEventListener("wheel",function(){
-//verifie si l'utilisateur est sur la première oeuvre
-//document.querySelectorAll("")
-});
+
