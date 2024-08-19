@@ -51,7 +51,6 @@ oeuvres.forEach((oeuvre) => {
     carousselOeuvresSlides.innerHTML = carousselOeuvresSlides.innerHTML + `<div class="swiper-slide">
     <img class="oeuvre" src="${oeuvre.imgPresentation}" alt="">
 </div>`;
-
 });
 
 /*REMPLIS LES INFORMATIONS DE L'OEUVRE LORSQU'ON CLIQUE SUR L'IMAGE*/
@@ -127,10 +126,12 @@ let contenus = {
 }
 
 /**** Bouton projet (CHANGE LE CONTENUS DE LA PAGE POUR LA PAGE PROJET)*****/
+let animationTitrePrete = false;
+
 let contenusDesactiver = false;
 let animationTerminer = false;
 btnProjets.addEventListener("click", function () {
-
+    animationTitrePrete = true;
     if (contenus.projets.active == false) {
         gsap.to(".animationContenus", {
             y: "-100%",
@@ -174,27 +175,38 @@ btnProjets.addEventListener("click", function () {
 
 // ANIMATION DE LA PAGE PROJETS POUR FAIRE DISPAITRE LE TITRES QUAND LES OEUVRES SONT PRÉSENTE
 let swiperActif = false;
+let swiperUtilisateurDebut = true;
+let animationDebut = true;
+let classTrouver = false;
 addEventListener("wheel", function () {
-    let length = document.querySelector(".swiperOeuvres .swiper-slide").classList.length;
-    let index = 0;
-    let classeTrouver = false;
-    document.querySelectorAll(".swiperOeuvres .vide").forEach((slide) => {
-        slide.classList.forEach((c) => {
+    if(contenus.projets.active == true){
+        let index = 0;
+        if (animationTitrePrete == true && animationTerminer == true && animationDebut == true) {
+            console.log("partie 01");
+            animationDebut = false;
+            gsap.to(".animationContenus", {
+                y: "-110%",
+                duration: 0.3,
+            });
+        }
+        /**************************A TRAVAILLER ******************/
+        document.querySelector(".swiperOeuvres .vide").classList.forEach((c) => {
             index++;
-            if (c == "swiper-slide-active" && contenus.projets.active == true && swiperActif == false && animationTerminer == true) {
-                console.log("partie 01");
+            classTrouver = false;
+            if (c == "swiper-slide-active" && swiperActif == true) {
+                classTrouver = true;
+                swiperActif = false;
+                console.log("utilisateur retourne au début");
+            }
+            if (index == document.querySelector(".swiperOeuvres .vide").classList.length && classTrouver == false && swiperActif == false) {
                 swiperActif = true;
-                gsap.to(".animationContenus", {
-                    y: "-110%",
-                    duration: 0.3,
-                });
+                console.log("utilisateur check oeuvres");
             }
-            if(c == "swiper-slide-active" && swiperActif == true){
-                console.log("partie 02");
+            if(classTrouver == true){
+                console.log("test")
             }
-
         })
-    })
+    }   
 });
 
 
