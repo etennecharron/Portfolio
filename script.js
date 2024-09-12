@@ -174,10 +174,14 @@ btnProjets.addEventListener("click", function () {
 
 
 // ANIMATION DE LA PAGE PROJETS POUR FAIRE DISPAITRE LE TITRES QUAND LES OEUVRES SONT PRÉSENTE
+/** 
 let swiperActif = false;
 let swiperUtilisateurDebut = true;
 let animationDebut = true;
 let classTrouver = false;
+
+
+
 addEventListener("wheel", function () {
     if(contenus.projets.active == true){
         let index = 0;
@@ -189,7 +193,6 @@ addEventListener("wheel", function () {
                 duration: 0.3,
             });
         }
-        /**************************A TRAVAILLER ******************/
         document.querySelector(".swiperOeuvres .vide").classList.forEach((c) => {
             index++;
             classTrouver = false;
@@ -208,7 +211,7 @@ addEventListener("wheel", function () {
         })
     }   
 });
-
+*/
 
 /******* swiper pour les oeuvres**********/
 const swiperOeuvres = new Swiper(".swiperOeuvres", {
@@ -247,6 +250,33 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
         sensitivity: 1,
     },
 })
+
+
+let swiperActif = false;
+
+swiperOeuvres.on("reachBeginning", function(){
+if(contenus.projets.active == true && swiperActif == true){
+    //console.log("arrivé début");
+    swiperActif = false;
+    gsap.fromTo(".animationContenus",
+        { y: "-110%" },
+        { y: "0%",
+            duration:0.3,
+        }
+    );
+}
+});
+
+swiperOeuvres.on("slideChange",function(){
+    if(contenus.projets.active == true && swiperActif == false){
+        swiperActif = true;
+        gsap.to(".animationContenus", {
+            y: "-110%",
+            duration: 0.3,
+        });
+        //console.log("sortit")
+    }
+});
 
 
 /********swiper pour les images de l'oeuvre**********/
