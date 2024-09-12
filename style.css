@@ -52,6 +52,7 @@ nav ul li button {
 }
 
 main {
+  overflow-x: hidden;
   height: 100vh;
   width: 100vw;
   display: flex;

@@ -268,7 +268,7 @@ if(contenus.projets.active == true && swiperActif == true){
 });
 
 swiperOeuvres.on("slideChange",function(){
-    if(contenus.projets.active == true && swiperActif == false){
+    if(contenus.projets.active == true && swiperOeuvres.activeIndex != 0 && swiperActif == false ){
         swiperActif = true;
         gsap.to(".animationContenus", {
             y: "-110%",
