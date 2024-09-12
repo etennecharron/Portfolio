@@ -256,7 +256,7 @@ let swiperActif = false;
 
 swiperOeuvres.on("reachBeginning", function(){
 if(contenus.projets.active == true && swiperActif == true){
-    //console.log("arrivé début");
+    console.log("arrivé début");
     swiperActif = false;
     gsap.fromTo(".animationContenus",
         { y: "-110%" },
@@ -274,7 +274,7 @@ swiperOeuvres.on("slideChange",function(){
             y: "-110%",
             duration: 0.3,
         });
-        //console.log("sortit")
+        console.log("sortit")
     }
 });
 
