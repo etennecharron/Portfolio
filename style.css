@@ -71,6 +71,7 @@ main h1 {
   margin: 0;
 }
 main .btnProjets01 {
+  color: black;
   border: none;
   font-weight: 300;
   font-size: 20px;
@@ -82,6 +83,10 @@ main .contenusPage {
   text-align: center;
   overflow: hidden;
   height: 300px;
+}
+main .contenusPage .imgIncitation img {
+  width: 50px;
+  height: 50px;
 }
 
 /**
@@ -105,7 +110,8 @@ footer .contactWrapup__contact {
 }
 footer .contactWrapup__contact img {
   width: 35px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   margin-right: 5px;
 }
 footer .contactWrapup__contact p {
@@ -121,7 +127,8 @@ footer .sociauxWrapup {
 }
 footer .sociauxWrapup img {
   width: 50px;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 footer .sociauxWrapup img:nth-child(1) {
   margin-right: 10px;
@@ -131,7 +138,9 @@ footer .sociauxWrapup img:nth-child(1) {
   overflow-x: hidden;
   height: 100vh;
   width: 100%;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   z-index: 3;
 }
 .swiperOeuvres .swiper-wrapper .swiper-slide {
@@ -142,7 +151,8 @@ footer .sociauxWrapup img:nth-child(1) {
 .swiperOeuvres .swiper-wrapper .swiper-slide img {
   width: 400px;
   height: 348px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   box-shadow: rgba(0, 0, 0, 0.3411764706) 0px 20px 20px 0px;
   transition: 0.5s;
 }
@@ -183,7 +193,9 @@ footer .sociauxWrapup img:nth-child(1) {
   align-items: center;
 }
 .oeuvreWrapup__img img {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   width: 100%;
   aspect-ratio: 1;
   border-radius: 100%;
@@ -208,7 +220,9 @@ footer .sociauxWrapup img:nth-child(1) {
   right: 20px;
   background-color: transparent;
   border: none;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .oeuvreWrapup__contenus__ecran__interieur {
   padding: 20px;
@@ -248,7 +262,9 @@ footer .sociauxWrapup img:nth-child(1) {
   align-items: center;
 }
 .oeuvreWrapup__contenus__ecran__interieur__videos iframe {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   margin: 10px;
   width: 100%;
   height: 360px;
@@ -258,12 +274,15 @@ footer .sociauxWrapup img:nth-child(1) {
   width: 100%;
 }
 .oeuvreWrapup__contenus__ecran__interieur__images img {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   width: 100%;
   height: 100%;
   max-width: 590px;
   margin: 0;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .swiperImages {

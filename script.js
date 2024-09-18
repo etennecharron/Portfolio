@@ -1,6 +1,7 @@
 //let btnAccueil = document.querySelector(".btnAccueil");
 let btnProjets = document.querySelector(".btnProjets01");
 let imgScroll = document.querySelector(".imgScroll");
+let imgSwipe = document.querySelector(".imgSwipe");
 
 let titre = document.querySelector(".titre");
 let contenusPage = document.querySelector(".contenusPage");
@@ -127,7 +128,6 @@ let contenus = {
 
 /**** Bouton projet (CHANGE LE CONTENUS DE LA PAGE POUR LA PAGE PROJET)*****/
 let animationTitrePrete = false;
-
 let contenusDesactiver = false;
 let animationTerminer = false;
 btnProjets.addEventListener("click", function () {
@@ -145,7 +145,13 @@ btnProjets.addEventListener("click", function () {
             titre.innerText = contenus.projets.titre;
 
             btnProjets.classList.add("desactiver");
-            imgScroll.classList.remove("desactiver");
+
+            if(navigator.userAgentData.mobile == false){
+                imgScroll.classList.remove("desactiver");
+            }
+            else{
+                imgSwipe.classList.remove("desactiver");
+            }
 
             gsap.fromTo(".animationContenus",
                 { y: "100%" },
@@ -160,58 +166,25 @@ btnProjets.addEventListener("click", function () {
                 carousselOeuvres.classList.remove("desactiver");
             }, 900)
             setTimeout(() => {
+                //animation Scroll
                 gsap.to('.imgScroll', {
-                    repeat: -1,
-                    yoyo: true,
+                    repeat: -1,  
                     y: '20%',
+                    yoyo:true,
                 },
                 );
+                //animation Swipe
+                gsap.fromTo(".imgSwipe",
+                    {x:"-10%"},
+                    {x:"10%",
+                        repeat:-1,
+                        yoyo:true
+                    }
+                )
             }, 1250)
         }, 300);
     }
 });
-
-
-
-// ANIMATION DE LA PAGE PROJETS POUR FAIRE DISPAITRE LE TITRES QUAND LES OEUVRES SONT PRÉSENTE
-/** 
-let swiperActif = false;
-let swiperUtilisateurDebut = true;
-let animationDebut = true;
-let classTrouver = false;
-
-
-
-addEventListener("wheel", function () {
-    if(contenus.projets.active == true){
-        let index = 0;
-        if (animationTitrePrete == true && animationTerminer == true && animationDebut == true) {
-            console.log("partie 01");
-            animationDebut = false;
-            gsap.to(".animationContenus", {
-                y: "-110%",
-                duration: 0.3,
-            });
-        }
-        document.querySelector(".swiperOeuvres .vide").classList.forEach((c) => {
-            index++;
-            classTrouver = false;
-            if (c == "swiper-slide-active" && swiperActif == true) {
-                classTrouver = true;
-                swiperActif = false;
-                console.log("utilisateur retourne au début");
-            }
-            if (index == document.querySelector(".swiperOeuvres .vide").classList.length && classTrouver == false && swiperActif == false) {
-                swiperActif = true;
-                console.log("utilisateur check oeuvres");
-            }
-            if(classTrouver == true){
-                console.log("test")
-            }
-        })
-    }   
-});
-*/
 
 /******* swiper pour les oeuvres**********/
 const swiperOeuvres = new Swiper(".swiperOeuvres", {
