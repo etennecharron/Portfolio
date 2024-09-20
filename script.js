@@ -150,11 +150,12 @@ btnProjets.addEventListener("click", function () {
                 console.log("ordi");
                 imgScroll.classList.remove("desactiver");
             };
-            if(navigator.userAgentData.mobile == true){
+            /** 
+            if(navigator.userAgentData.mobile != false){
                 console.log("mobile");
                 imgSwipe.classList.remove("desactiver");
             };
-
+*/
             gsap.fromTo(".animationContenus",
                 { y: "100%" },
                 {
@@ -338,3 +339,5 @@ else if (window.innerWidth < 830) {
 }
 
 
+
+console.log("ordi? " + navigator.userAgentData.mobile);
