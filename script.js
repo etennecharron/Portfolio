@@ -146,15 +146,13 @@ btnProjets.addEventListener("click", function () {
 
             btnProjets.classList.add("desactiver");
 
+            /** 
             if(navigator.userAgentData.mobile == false){
                 console.log("ordi");
                 imgScroll.classList.remove("desactiver");
             };
-            if(navigator.userAgentData.mobile != false){
-                console.log("mobile");
-                imgSwipe.classList.remove("desactiver");
-            };
-
+            */
+            imgSwipe.classList.remove("desactiver");
             gsap.fromTo(".animationContenus",
                 { y: "100%" },
                 {
