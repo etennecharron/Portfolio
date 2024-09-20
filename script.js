@@ -146,42 +146,59 @@ btnProjets.addEventListener("click", function () {
 
             btnProjets.classList.add("desactiver");
 
-            /** 
-            if(navigator.userAgentData.mobile == false){
+/**********************ANIMATION POUR ORDI***********************/
+            if (navigator.userAgentData.mobile == false) {
                 console.log("ordi");
                 imgScroll.classList.remove("desactiver");
-            };
-            */
-            imgSwipe.classList.remove("desactiver");
-            gsap.fromTo(".animationContenus",
-                { y: "100%" },
-                {
-                    y: 0,
-                    duration: 0.8,
-                    ease: "back.out"
-                }
-            )
-            setTimeout(() => {
-                animationTerminer = true;
-                carousselOeuvres.classList.remove("desactiver");
-            }, 900)
-            setTimeout(() => {
-                //animation Scroll
-                gsap.to('.imgScroll', {
-                    repeat: -1,  
-                    y: '20%',
-                    yoyo:true,
-                },
-                );
-                //animation Swipe
-                gsap.fromTo(".imgSwipe",
-                    {x:"-10%"},
-                    {x:"10%",
-                        repeat:-1,
-                        yoyo:true,
+                gsap.fromTo(".animationContenus",
+                    { y: "100%" },
+                    {
+                        y: 0,
+                        duration: 0.8,
+                        ease: "back.out"
                     }
                 )
-            }, 1250)
+                setTimeout(() => {
+                    animationTerminer = true;
+                    carousselOeuvres.classList.remove("desactiver");
+                }, 900)
+                setTimeout(() => {
+                    //animation Scroll
+                    gsap.to('.imgScroll', {
+                        repeat: -1,
+                        y: '20%',
+                        yoyo: true,
+                    },
+                    );
+                }, 1250)
+            }
+            /**********************ANIMATION POUR MOBIL***********************/
+            else {
+                imgSwipe.classList.remove("desactiver");
+                gsap.fromTo(".animationContenus",
+                    { y: "100%" },
+                    {
+                        y: 0,
+                        duration: 0.8,
+                        ease: "back.out"
+                    }
+                )
+                setTimeout(() => {
+                    animationTerminer = true;
+                    carousselOeuvres.classList.remove("desactiver");
+                }, 900)
+                setTimeout(() => {
+                    //animation Swipe
+                    gsap.fromTo(".imgSwipe",
+                        { x: "-10%" },
+                        {
+                            x: "10%",
+                            repeat: -1,
+                            yoyo: true,
+                        }
+                    )
+                }, 1250)
+            }
         }, 300);
     }
 });
@@ -227,21 +244,22 @@ const swiperOeuvres = new Swiper(".swiperOeuvres", {
 
 let swiperActif = false;
 
-swiperOeuvres.on("reachBeginning", function(){
-if(contenus.projets.active == true && swiperActif == true){
-    console.log("arrivé début");
-    swiperActif = false;
-    gsap.fromTo(".animationContenus",
-        { y: "-110%" },
-        { y: "0%",
-            duration:0.3,
-        }
-    );
-}
+swiperOeuvres.on("reachBeginning", function () {
+    if (contenus.projets.active == true && swiperActif == true) {
+        console.log("arrivé début");
+        swiperActif = false;
+        gsap.fromTo(".animationContenus",
+            { y: "-110%" },
+            {
+                y: "0%",
+                duration: 0.3,
+            }
+        );
+    }
 });
 
-swiperOeuvres.on("slideChange",function(){
-    if(contenus.projets.active == true && swiperOeuvres.activeIndex != 0 && swiperActif == false ){
+swiperOeuvres.on("slideChange", function () {
+    if (contenus.projets.active == true && swiperOeuvres.activeIndex != 0 && swiperActif == false) {
         swiperActif = true;
         gsap.to(".animationContenus", {
             y: "-110%",
