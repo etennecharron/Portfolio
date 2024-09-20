@@ -150,12 +150,11 @@ btnProjets.addEventListener("click", function () {
                 console.log("ordi");
                 imgScroll.classList.remove("desactiver");
             };
-            /** 
             if(navigator.userAgentData.mobile != false){
                 console.log("mobile");
                 imgSwipe.classList.remove("desactiver");
             };
-*/
+
             gsap.fromTo(".animationContenus",
                 { y: "100%" },
                 {
@@ -337,7 +336,3 @@ else if (window.innerWidth < 830) {
     swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
     swiperOeuvres.slideTo(0);
 }
-
-
-
-console.log("ordi? " + navigator.userAgentData.mobile);
