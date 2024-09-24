@@ -171,9 +171,8 @@ btnProjets.addEventListener("click", function () {
                     },
                     );
                 }, 1250)
-            }
-            /**********************ANIMATION POUR MOBIL***********************/
-            else {
+            }else {
+                /**********************ANIMATION POUR MOBIL***********************/
                 imgSwipe.classList.remove("desactiver");
                 gsap.fromTo(".animationContenus",
                     { y: "100%" },
@@ -198,9 +197,9 @@ btnProjets.addEventListener("click", function () {
                         }
                     )
                 }, 1250)
-            }
+            };
         }, 300);
-    }
+    };
 });
 
 /******* swiper pour les oeuvres**********/
