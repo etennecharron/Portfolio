@@ -145,7 +145,7 @@ btnProjets.addEventListener("click", function () {
             btnProjets.classList.add("desactiver");
 
 /**********************ANIMATION POUR ORDI***********************/
-/*
+
             if (navigator.userAgentData.mobile == false) {
                 console.log("ordi");
                 imgScroll.classList.remove("desactiver");
@@ -196,7 +196,7 @@ btnProjets.addEventListener("click", function () {
                         }
                     )
                 }, 1250)
-            };*/
+            };
         }, 300);
         
     };
@@ -348,7 +348,3 @@ else if (window.innerWidth < 830) {
     swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
     swiperOeuvres.slideTo(0);
 }
-
-
-console.log("mobile? "+navigator.userAgentData.mobile);
-console.log("platforme? " + navigator.userAgentData.platform);
