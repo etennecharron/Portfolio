@@ -147,34 +147,8 @@ btnProjets.addEventListener("click", function () {
             btnProjets.classList.add("desactiver");
 
 /**********************ANIMATION POUR ORDI***********************/
-            if (navigator.userAgentData.mobile == true) {
-                console.log("mobile");
-                imgSwipe.classList.remove("desactiver");
-                gsap.fromTo(".animationContenus",
-                    { y: "100%" },
-                    {
-                        y: 0,
-                        duration: 0.8,
-                        ease: "back.out"
-                    }
-                )
-                setTimeout(() => {
-                    animationTerminer = true;
-                    carousselOeuvres.classList.remove("desactiver");
-                }, 900)
-                setTimeout(() => {
-                    //animation Swipe
-                    gsap.fromTo(".imgSwipe",
-                        { x: "-10%" },
-                        {
-                            x: "10%",
-                            repeat: -1,
-                            yoyo: true,
-                        }
-                    )
-                }, 1250)
-
-                /** 
+/*
+            if (navigator.userAgentData.mobile == false) {
                 console.log("ordi");
                 imgScroll.classList.remove("desactiver");
                 gsap.fromTo(".animationContenus",
@@ -198,36 +172,7 @@ btnProjets.addEventListener("click", function () {
                     },
                     );
                 }, 1250)
-                */
             }else {
-                /**********************ANIMATION POUR MOBIL***********************/
-
-
-                console.log("ordi");
-                imgScroll.classList.remove("desactiver");
-                gsap.fromTo(".animationContenus",
-                    { y: "100%" },
-                    {
-                        y: 0,
-                        duration: 0.8,
-                        ease: "back.out"
-                    }
-                )
-                setTimeout(() => {
-                    animationTerminer = true;
-                    carousselOeuvres.classList.remove("desactiver");
-                }, 900)
-                setTimeout(() => {
-                    //animation Scroll
-                    gsap.to('.imgScroll', {
-                        repeat: -1,
-                        y: '20%',
-                        yoyo: true,
-                    },
-                    );
-                }, 1250)
-
-                /*
                 console.log("mobile");
                 imgSwipe.classList.remove("desactiver");
                 gsap.fromTo(".animationContenus",
@@ -253,9 +198,9 @@ btnProjets.addEventListener("click", function () {
                         }
                     )
                 }, 1250)
-                */
-            };
+            };*/
         }, 300);
+        
     };
 });
 
@@ -407,4 +352,13 @@ else if (window.innerWidth < 830) {
     });
     swiperOeuvres.addSlide(0, '<div class="swiper-slide vide"></div>');
     swiperOeuvres.slideTo(0);
+}
+
+
+console.log("mobile? "+navigator.userAgentData.mobile);
+console.log("platforme? " + navigator.userAgentData.platform);
+if(navigator.userAgentData.mobile == false){
+    console.log("ordi fonctionne");
+}else{
+    console.log("mobile fonctionne");
 }
