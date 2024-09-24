@@ -352,8 +352,3 @@ else if (window.innerWidth < 830) {
 
 console.log("mobile? "+navigator.userAgentData.mobile);
 console.log("platforme? " + navigator.userAgentData.platform);
-if(navigator.userAgentData.mobile == false){
-    console.log("ordi fonctionne");
-}else{
-    console.log("mobile fonctionne");
-}
