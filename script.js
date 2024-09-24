@@ -104,13 +104,11 @@ oeuvresArr.forEach((oeuvre) => {
     if (toggleHautBas == false) {
         toggleHautBas = true;
         let nbRdm = Math.round(Math.random() * 40);
-        console.log(nbRdm)
         oeuvre.style.marginBottom = nbRdm + "px";
     }
     else if (toggleHautBas == true) {
         toggleHautBas = false;
         let nbRdm = Math.round(Math.random() * -150);
-        console.log(nbRdm)
         oeuvre.style.marginBottom = nbRdm + "px";
     }
 
@@ -247,7 +245,6 @@ let swiperActif = false;
 
 swiperOeuvres.on("reachBeginning", function () {
     if (contenus.projets.active == true && swiperActif == true) {
-        console.log("arrivé début");
         swiperActif = false;
         gsap.fromTo(".animationContenus",
             { y: "-110%" },
@@ -266,7 +263,6 @@ swiperOeuvres.on("slideChange", function () {
             y: "-110%",
             duration: 0.3,
         });
-        console.log("sortit")
     }
 });
 
@@ -346,7 +342,6 @@ else if (window.innerWidth < 1300 && window.innerWidth > 830) {
 }
 else if (window.innerWidth < 830) {
     let oeuvresVideArr = document.querySelectorAll(".swiperOeuvres .vide");
-    console.log(oeuvresVideArr.length);
     oeuvresVideArr.forEach(() => {
         swiperOeuvres.removeSlide(0);
     });
