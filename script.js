@@ -146,7 +146,7 @@ btnProjets.addEventListener("click", function () {
 
 /**********************ANIMATION POUR ORDI***********************/
 
-            if (navigator.userAgentData.mobile == false) {
+            if (navigator.userAgentData.mobile == true) {
                 console.log("ordi");
                 imgScroll.classList.remove("desactiver");
                 gsap.fromTo(".animationContenus",
