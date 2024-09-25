@@ -144,9 +144,9 @@ btnProjets.addEventListener("click", function () {
 
             btnProjets.classList.add("desactiver");
 
-/**********************ANIMATION POUR ORDI***********************/
+            /**********************ANIMATION POUR ORDI***********************/
 
-            if (navigator.userAgentData.mobile == true) {
+            if (window.innerWidth >= 1024) {
                 console.log("ordi");
                 imgScroll.classList.remove("desactiver");
                 gsap.fromTo(".animationContenus",
@@ -170,7 +170,7 @@ btnProjets.addEventListener("click", function () {
                     },
                     );
                 }, 1250)
-            }else {
+            } else {
                 console.log("mobile");
                 imgSwipe.classList.remove("desactiver");
                 gsap.fromTo(".animationContenus",
@@ -198,7 +198,7 @@ btnProjets.addEventListener("click", function () {
                 }, 1250)
             };
         }, 300);
-        
+
     };
 });
 
