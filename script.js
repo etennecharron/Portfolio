@@ -14,6 +14,7 @@ let btnFermerOeuvre = document.querySelector(".oeuvreWrapup__contenus__ecran__x"
 let oeuvreOuvert = document.querySelector(".oeuvreWrapup");
 let carousselOeuvres = document.querySelector(".swiperOeuvres");
 
+let swiperActif = false;
 /******* swiper pour les oeuvres**********/
 const swiperOeuvres = new Swiper(".swiperOeuvres", {
     slidesPerView: 1,
@@ -187,11 +188,10 @@ let contenus = {
 let contenusDesactiver = false;
 let animationTerminer = false;
 function pageVersAccueil(){
-    console.log("test");
     if(contenus.accueil.active == false){
-        console.log("partie 1")
         contenus.accueil.active = true;
         contenus.projets.active = false;
+        swiperActif = false;
         if(checkDesactiver(carousselOeuvres) == false){
             carousselOeuvres.classList.add("desactiver");
             swiperOeuvres.slideTo(0);
@@ -240,7 +240,6 @@ function pageVersProjets(){
             /**********************ANIMATION POUR ORDI***********************/
 
             if (window.innerWidth >= 1024) {
-                console.log("ordi");
                 imgScroll.classList.remove("desactiver");
                 gsap.fromTo(".animationContenus",
                     { y: "100%" },
@@ -264,7 +263,6 @@ function pageVersProjets(){
                     );
                 }, 1250)
             } else {
-                console.log("mobile");
                 imgSwipe.classList.remove("desactiver");
                 gsap.fromTo(".animationContenus",
                     { y: "100%" },
@@ -300,7 +298,7 @@ btnNom.addEventListener("click", pageVersAccueil);
 
 
 
-let swiperActif = false;
+
 
 swiperOeuvres.on("reachBeginning", function () {
     if (contenus.projets.active == true && swiperActif == true) {
