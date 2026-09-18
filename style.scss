@@ -163,6 +163,7 @@ footer {
     width: 100%;
     user-select: none;
     z-index: 3;
+
     .swiper-wrapper {
         .swiper-slide {
             display: flex;
@@ -173,14 +174,14 @@ footer {
                 width: 400px;
                 height: 348px;
                 object-fit: cover;
-                box-shadow: #00000057 0px 20px 20px 0px;
-                transition: 0.5s;
-            }
 
-            img:hover {
-                cursor: pointer;
-                box-shadow: none;
+                box-shadow: var(--ombre);
                 transition: 0.5s;
+
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: none;
+                }
             }
         }
     }
@@ -286,6 +287,11 @@ footer {
                         font-weight: 300;
                         font-size: 25px;
                         text-align: justify;
+                    }
+                    a{
+                        font-weight: 300;
+                        font-size: 25px;
+                        color:black;
                     }
 
                     li {
@@ -606,3 +612,4 @@ footer {
 .desactiver {
     display: none;
 }
+

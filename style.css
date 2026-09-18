@@ -157,13 +157,12 @@ footer .sociauxWrapup img:nth-child(1) {
   height: 348px;
   -o-object-fit: cover;
      object-fit: cover;
-  box-shadow: rgba(0, 0, 0, 0.3411764706) 0px 20px 20px 0px;
+  box-shadow: var(--ombre);
   transition: 0.5s;
 }
 .swiperOeuvres .swiper-wrapper .swiper-slide img:hover {
   cursor: pointer;
   box-shadow: none;
-  transition: 0.5s;
 }
 
 @media (min-width: 800px) {
@@ -253,6 +252,11 @@ footer .sociauxWrapup img:nth-child(1) {
   font-weight: 300;
   font-size: 25px;
   text-align: justify;
+}
+.oeuvreWrapup__contenus__ecran__interieur__textes a {
+  font-weight: 300;
+  font-size: 25px;
+  color: black;
 }
 .oeuvreWrapup__contenus__ecran__interieur__textes li {
   font-weight: 300;

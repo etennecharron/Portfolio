@@ -65,31 +65,40 @@ const swiperImages = new Swiper(".swiperImages", {
 
 let oeuvres = [
     {
-        titre: "BIOTA",
-        imgPresentation: "images/projet01_biota.jpg",
-        couleur: "pink",
-        description: "BITOA est un projet réalisé dans le cadre d'un cours d'animation 3D et de conception sonore. C’est l'histoire d'une créature ayant une forme humanoïde. Elle est triste et seule. Sa tristesse fait naître la vie et redonne de la couleur à son monde. J'ai réalisé le montage vidéo sur Davinci Resolve, créé les sons sur VCV Rack et réalisé la création 3D du personnage et son animation sur MAYA..",
-        logiciels: ["Unity", "Davinci Resolve", "Maya", "Repear"],
-        iframe: [`<iframe src="https://www.youtube.com/embed/TYIZgZ5-SGg?si=Dvpai46RyXvKf_67" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`],
-        images: ["images/projet01_biota_contenus01.jpg",
-            "images/projet01_biota_contenus02.jpg",
-            "images/projet01_biota_contenus03.jpg"],
+        titre: "CANEVAS COSMIQUE",
+        couleur: "purple",
+        imgPresentation: "images/projet03_canevas-cosmique.png",
+        description: "Vous vous retrouvez dans un laboratoire contenant une table, après un peu de recherche vous découvrez que sur l'écran au-dessus de celle-ci se trouve une simulation d'un système solaire avec laquelle vous pouvez interagir en déposant des statues déclenchant différents phénomènes. Vous êtes invités à expérimenter sur cette table jusqu'à ce que les scientifiques reviennent, du moins... Dans cette installation intéractive, j'ai participé à la programmation de l'oeuvre dans Unity, l'installation physique de l'oeuvre et les montages vidéos",
+        link: "https://tim-montmorency.com/2024/projets/Canevas-Cosmique/docs/web/index.html",
+        logiciels: ["Unity", "Touch Designer", "Davinci Resolve", "Maya/Blender", "Repear", "Figma", "OBS"],
+        iframe: [
+            `<iframe width="560" height="315" src="https://www.youtube.com/embed/Jrn4U27G5YY?si=GXibq9jUBFFprD-p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`,
+            `<iframe width="560" height="315" src="https://www.youtube.com/embed/5xu6JZipWec?si=-xqcfMbwkH0TxAjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+        ],
+        images: [],
+    }, {
+        titre: "Disasters Island",
+        imgPresentation: "images/projet_01_disasters_island.png",
+        couleur: "green",
+        description: "Disasters Island est un jeu réalisé dans le cadre d'un game jam d'une semaine. La thématique était de créer un jeu autour de la thématique \"spin to win\". Dans ce jeu le joueur est ammené à faire tourner une roue qui augmente la difficulté du jeu. Le but du jeu est de survivre le plus longtemps possible sur une île en évitant les désastres naturels qui apparaissent aléatoirement. Dans ce projet, j'ai réalisé la programmation complète du jeu sur Unity.",
+        link: "https://yetiyetiyeti.itch.io/disasters-island",
+        logiciels: ["Unity"],
+        iframe: [],
+        images: ["images/projet_01_disasters_island.png"],
     }, {
         titre: "LA GROTTE",
         imgPresentation: "images/projet02_grotte.jpg",
         couleur: "orange",
         description: "LA GROTTE est un jeu d'évasion où le but est de s'échapper de la grotte où on est enfermés grâce à la réussite d'énigmes. Les énigmes sont réalisables grâce à une boîte orange imprimée en 3D qui contient des composantes comme un détecteur de lumière, 3 boutons, un potentiomètre et un détecteur de temps de vol. Dans le projet, j'ai conçu avec l'aide de mes collègues le design du jeu et le fonctionnement des énigmes. De plus, j'ai réalisé la programmation complète du jeu sur Unity et Arduino IDE.",
+        link: "",
         logiciels: ["Unity", "Arduino IDE", "Max", "VCV Rack", "Adobe Illustrator", "Maya"],
         iframe: [],
-        images: ["images/projet02_grotte_contenus01.jpg", "images/projet02_grotte_contenus02.jpg", "images/projet02_grotte_contenus03.jpg", "images/projet02_grotte_contenus04.png"],
-    }, {
-        titre: "CANEVAS COSMIQUE",
-        couleur: "purple",
-        imgPresentation: "images/projet03_canevas-cosmique.png",
-        description: "Vous vous retrouvez dans un laboratoire contenant une table, après un peu de recherche vous découvrez que sur l'écran au-dessus de celle-ci se trouve une simulation d'un système solaire avec laquelle vous pouvez interagir en déposant des statues déclenchant différents phénomènes. Vous êtes invités à expérimenter sur cette table jusqu'à ce que les scientifiques reviennent, du moins... Dans cette installation intéractive, j'ai participé à la programmation de l'oeuvre dans Unity, l'installation physique de l'oeuvre et les montages vidéos",
-        logiciels: ["Unity", "Touch Designer", "Davinci Resolve", "Maya/Blender", "Repear", "Figma", "OBS"],
-        iframe: [`<iframe width="560" height="315" src="https://www.youtube.com/embed/Jrn4U27G5YY?si=GXibq9jUBFFprD-p" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`, `<iframe width="560" height="315" src="https://www.youtube.com/embed/5xu6JZipWec?si=-xqcfMbwkH0TxAjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`],
-        images: [],
+        images: [
+            "images/projet02_grotte_contenus01.jpg",
+            "images/projet02_grotte_contenus02.jpg",
+            "images/projet02_grotte_contenus03.jpg",
+            "images/projet02_grotte_contenus04.png"
+        ],
     }
 ]
 function checkDesactiver(balise){
@@ -109,15 +118,30 @@ let logicielsOeuvre = document.querySelector(".logicielsOeuvre");
 let videosOeuvre = document.querySelector(".videosOeuvre");
 let imagesOeuvre = document.querySelector(".imagesOeuvre");
 let oeuvreContenus = document.querySelector(".oeuvreWrapup__contenus__ecran__interieur");
+let link = document.querySelector(".lienOeuvre");
 oeuvres.forEach((oeuvre) => {
     carousselOeuvresSlides.innerHTML = carousselOeuvresSlides.innerHTML + `<div class="swiper-slide">
-    <img class="oeuvre" src="${oeuvre.imgPresentation}" alt="">
+    <img class="oeuvre" src="${oeuvre.imgPresentation}" alt="" ">
 </div>`;
 });
+
+carousselOeuvresSlides
+    .querySelectorAll(".swiper-slide img")
+    .forEach((img) => {
+        const index = Array.from(
+            carousselOeuvresSlides.querySelectorAll(".swiper-slide img")
+        ).indexOf(img);
+
+        img.style.setProperty(
+            "--ombre",
+            `0px 20px 20px color-mix(in srgb, ${oeuvres[index].couleur} 30%, transparent)`
+        );
+    });
 
 /*REMPLIS LES INFORMATIONS DE L'OEUVRE LORSQU'ON CLIQUE SUR L'IMAGE*/
 oeuvresArr = document.querySelectorAll(".swiperOeuvres .swiper-slide .oeuvre");
 for (let i = 0; i < oeuvresArr.length; i++) {
+
     oeuvresArr[i].addEventListener("click", function () {
         carousselOeuvres.classList.add("desactiver");
         oeuvreOuvert.classList.remove("desactiver");
@@ -127,6 +151,13 @@ for (let i = 0; i < oeuvresArr.length; i++) {
         titreOeuvre.innerText = oeuvres[i].titre;
         //paragraphe description
         paragrapheOeuvre.innerText = oeuvres[i].description
+        //link
+        if(oeuvres[i].link != ""){
+            link.classList.remove("desactiver");
+            link.href = oeuvres[i].link;
+        }else{
+            link.classList.add("desactiver");
+        }
         //list logiciels
         logicielsOeuvre.innerHTML = "";
         oeuvres[i].logiciels.forEach((logiciel) => {
