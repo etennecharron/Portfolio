@@ -86,6 +86,15 @@ let oeuvres = [
         iframe: [],
         images: ["images/projet_01_disasters_island.png"],
     }, {
+        titre: "Physic155",
+        imgPresentation: "images/projet04_physic.png",
+        couleur: "gray",
+        description: "physic155 est une simulation de physique où il est possible de propulser une balle dans un environnement 2D. Le but était de mettre en pratique les notions aprise en cours de ing155. La programmation à été réalisée en javascript.",
+        link: "https://yetiyetiyeti.itch.io/physic-155",
+        logiciels: ["aucun"],
+        iframe: [],
+        images: ["images/projet04_physic.png"],
+    }, {
         titre: "LA GROTTE",
         imgPresentation: "images/projet02_grotte.jpg",
         couleur: "orange",
